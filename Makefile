@@ -6,13 +6,14 @@
 #    By: Debaz <klescaud@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/07 12:30:09 by Debaz             #+#    #+#              #
-#    Updated: 2016/01/14 09:30:39 by klescaud         ###   ########.fr        #
+#    Updated: 2016/01/14 10:02:54 by klescaud         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 SRC_PATH =			sources/
 
 SRC_NAME =			ft_printf.c		ft_strndup.c		ft_strlen.c			\
-					main.c
+					main.c			add_ptr.c			add_octal.c			\
+					add_uint.c		add_hexa.c			add_majhexa.c
 
 OBJ_PATH =			obj/
 

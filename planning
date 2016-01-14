@@ -24,13 +24,13 @@ Kukurbitak :
 
 --------------------------------------------------------------------------------
 Debaz :
-- p						add_ptr(void *ptr);
-- o						add_octal(int n, int mod);
-- O (Avec modifieur)	add_octal(int n, int mod);
-- u		  				add_uint(unsigned int n, int mod);
-- U (Avec modifieur)	add_uint(unsigned int n, int mod);
-- x		  				add_hexa(int n);
-- X						add_majhexa(int n);
+- p						add_ptr(void *ptr);					=> Fichier cree, WIP
+- o						add_octal(int n, int mod);			=> Fichier cree, WIP
+- O (Avec modifieur)	add_octal(int n, int mod);			=> Fichier cree, WIP
+- u		  				add_uint(unsigned int n, int mod);	=> Fichier cree, WIP
+- U (Avec modifieur)	add_uint(unsigned int n, int mod);	=> Fichier cree, WIP
+- x		  				add_hexa(int n);					=> Fichier cree, WIP
+- X						add_majhexa(int n);					=> Fichier cree, WIP
 
 --------------------------------------------------------------------------------
 Prerogatives :
