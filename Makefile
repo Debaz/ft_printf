@@ -1,13 +1,77 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: klescaud <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: ksoulard <ksoulard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/02/16 14:47:25 by klescaud          #+#    #+#              #
-#    Updated: 2016/02/16 14:52:01 by ksoulard         ###   ########.fr        #
+#    Created: 2016/01/11 13:44:49 by ksoulard          #+#    #+#              #
+#    Updated: 2016/02/16 14:54:08 by ksoulard         ###   ########.fr        #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
-#VOIDwefwef
+NAME =		minishell
+
+CC =		gcc
+
+EXT =		.c
+
+FLAGS =		-Wall -Wextra -Werror
+
+FILE =		sh1_main	sh1_init	sh1_getinfos	sh1_exec	\
+			sh1_env		sh1_cd
+
+SOURCE = 	srcs/
+
+INCLUDE =	includes/
+
+HEADER = 	sh1.h
+
+FILES =		$(addprefix $(SOURCE), $(addsuffix $(EXT), $(FILE)))
+
+OBJ = $(FILES:$(EXT)=.o)
+
+LIB_DIR =	libft
+
+EXEC=		$(LIB_DIR)/$(LIB_DIR).a
+
+C_W=		\033[0m
+C_R=		\033[38;5;124m
+C_Y=		\033[38;5;214m
+C_B=		\033[38;5;97m
+C_N=		\033[38;5;200m
+C_G=		\033[38;5;190m
+
+all: 	$(EXEC) $(NAME) #norme
+
+$(EXEC):
+		@make -C $(LIB_DIR)
+		@echo "$(C_Y)$(LIB_DIR) $(C_R)		is done !$(C_W)"
+
+$(NAME): $(OBJ)
+		@$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(EXEC)
+		@echo "\n$(C_Y)$(NAME) $(C_R)		is done !$(C_W)"
+
+%.o:	%$(EXT) $(INCLUDE)
+		@$(CC) $(FLAGS) -c $< -o $@ -I libft
+		@printf "\033[32m.$(C_W)"
+
+clean:
+		@rm -rf $(OBJ)
+		@echo "$(C_B)$(NAME)$(C_R)		All obj are cleaned$(C_W)"
+		@(cd $(LIB_DIR) && $(MAKE) $@)
+		@echo "$(C_B)$(LIB_DIR)$(C_R)		All obj are cleaned$(C_W)"
+
+fclean: clean
+		@rm -rf $(NAME)
+		@echo "\n$(C_G)$(NAME)$(C_R)		is clean$(C_W)"
+		@(cd $(LIB_DIR) && $(MAKE) $@)
+		@echo "$(C_G)$(EXEC)$(C_R)	is clean$(C_W)\n"
+
+norme:
+	@echo "\nSource:$(C_N)"
+	@norminette $(FILES)
+	@echo "\n$(C_W)Header:$(C_N)"
+	@norminette $(INCLUDE)$(HEADER)
+	@echo "$(C_W)"
+re: fclean all
