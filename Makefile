@@ -6,11 +6,11 @@
 #    By: ksoulard <ksoulard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/11 13:44:49 by ksoulard          #+#    #+#              #
-#    Updated: 2016/02/16 14:54:08 by ksoulard         ###   ########.fr        #
+#    Updated: 2016/02/16 15:09:45 by klescaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		minishell
+NAME =		printf
 
 CC =		gcc
 
@@ -18,20 +18,19 @@ EXT =		.c
 
 FLAGS =		-Wall -Wextra -Werror
 
-FILE =		sh1_main	sh1_init	sh1_getinfos	sh1_exec	\
-			sh1_env		sh1_cd
+FILE =		ptf_main ptf_parser
 
-SOURCE = 	srcs/
+SOURCE = 	sources/
 
 INCLUDE =	includes/
 
-HEADER = 	sh1.h
+HEADER = 	ft_printf.h
 
 FILES =		$(addprefix $(SOURCE), $(addsuffix $(EXT), $(FILE)))
 
-OBJ = $(FILES:$(EXT)=.o)
+OBJ =		$(FILES:$(EXT)=.o)
 
-LIB_DIR =	libft
+LIB_DIR =	sources/libft
 
 EXEC=		$(LIB_DIR)/$(LIB_DIR).a
 
@@ -69,9 +68,10 @@ fclean: clean
 		@echo "$(C_G)$(EXEC)$(C_R)	is clean$(C_W)\n"
 
 norme:
-	@echo "\nSource:$(C_N)"
-	@norminette $(FILES)
-	@echo "\n$(C_W)Header:$(C_N)"
-	@norminette $(INCLUDE)$(HEADER)
-	@echo "$(C_W)"
+		@echo "\nSource:$(C_N)"
+		@norminette $(FILES)
+		@echo "\n$(C_W)Header:$(C_N)"
+		@norminette $(INCLUDE)$(HEADER)
+		@echo "$(C_W)"
+
 re: fclean all
