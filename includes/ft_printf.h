@@ -6,7 +6,7 @@
 /*   By: klescaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 14:48:16 by klescaud          #+#    #+#             */
-/*   Updated: 2016/02/16 15:44:21 by klescaud         ###   ########.fr       */
+/*   Updated: 2016/02/16 16:13:53 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,24 @@
 */
 
 typedef struct			s_ptfinfo{
-	char			**format;
+	char			**format_array;
 	char			**types;
 	unsigned int	nbargs;
 }						t_ptfinfo;
 
 /*
 ** -----------------------------------------------------------------------------
+** ptf_main.c
 */
 
-int		ft_printf(char *format, ...);
+int			ft_printf(char *format);
+
+/*
+** -----------------------------------------------------------------------------
+** ptf_display.c
+*/
+
+void		display_array(char **array);
+size_t		array_size(char **array);
 
 #endif

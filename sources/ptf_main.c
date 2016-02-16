@@ -6,7 +6,7 @@
 /*   By: klescaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 14:47:45 by klescaud          #+#    #+#             */
-/*   Updated: 2016/02/16 16:07:28 by klescaud         ###   ########.fr       */
+/*   Updated: 2016/02/16 16:14:23 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		main(void)
 ** ft_printf => Reproduce the behaviour of printf function
 */
 
-int		ft_printf(char *format, ...)
+int		ft_printf(char *format)
 {
 /*
 ** WIP
@@ -47,7 +47,7 @@ int		ft_printf(char *format, ...)
 
 	res = 0;
 	ptfinfo = str_parser(format);
-	display_array(ptfinfo->format);
-	res = array_size(ptfinfo->format);
+	display_array(ptfinfo->format_array);
+	res = array_size(ptfinfo->format_array);
 	return (res);
 }
