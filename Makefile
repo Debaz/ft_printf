@@ -6,7 +6,7 @@
 #    By: ksoulard <ksoulard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/11 13:44:49 by ksoulard          #+#    #+#              #
-#    Updated: 2016/02/16 15:09:45 by klescaud         ###   ########.fr        #
+#    Updated: 2016/02/16 15:59:33 by klescaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ EXT =		.c
 
 FLAGS =		-Wall -Wextra -Werror
 
-FILE =		ptf_main ptf_parser
+FILE =		ptf_main ptf_parser ptf_display
 
 SOURCE = 	sources/
 
