@@ -6,7 +6,7 @@
 /*   By: ksoulard <ksoulard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 14:57:16 by ksoulard          #+#    #+#             */
-/*   Updated: 2016/02/16 16:54:31 by ksoulard         ###   ########.fr       */
+/*   Updated: 2016/02/17 10:07:47 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ char			**check_format(char *format, int nbargs)
 // info->format_array = (char **)malloc(sizeof(char *) * nbformat + 1);
 // info->format_array[nbformat] = NULL;
 
-ptf_info		str_parser(char *format)
+t_ptfinfo		str_parser(char *format)
 {
 	t_ptfinfo	*info;
 	int			nbconv;

@@ -6,7 +6,7 @@
 /*   By: klescaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 14:47:45 by klescaud          #+#    #+#             */
-/*   Updated: 2016/02/16 16:14:23 by klescaud         ###   ########.fr       */
+/*   Updated: 2016/02/17 10:08:39 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ int		ft_printf(char *format)
 /*
 ** WIP
 */
-	t_ptfinfo	*ptfinfo;
+	t_ptfinfo	*info;
 	size_t		res;
 
 	res = 0;
-	ptfinfo = str_parser(format);
-	display_array(ptfinfo->format_array);
+	*info = str_parser(format);
+	display_array(info->format_array);
 	res = array_size(ptfinfo->format_array);
 	return (res);
 }

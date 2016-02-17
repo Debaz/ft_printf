@@ -6,7 +6,7 @@
 /*   By: klescaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 14:48:16 by klescaud          #+#    #+#             */
-/*   Updated: 2016/02/16 16:13:53 by klescaud         ###   ########.fr       */
+/*   Updated: 2016/02/17 10:07:10 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,30 @@ int			ft_printf(char *format);
 
 void		display_array(char **array);
 size_t		array_size(char **array);
+
+/*
+** -----------------------------------------------------------------------------
+** ft_free_tab.c
+*/
+
+void		*ft_free_tab(void **tab);
+
+/*
+** -----------------------------------------------------------------------------
+** ft_strndup.c
+*/
+
+char		*ft_strndup(char const *s, int n);
+
+/*
+** -----------------------------------------------------------------------------
+** ptf_display.c
+*/
+
+int			init_info(t_ptfinfo *info);
+int			check_charconv(char c, char *conv, unsigned int nbargs);
+void		check_nbconversion(char *format, t_ptfinfo **info);
+char		**check_format(char *format, int nbargs);
+t_ptfinfo	str_parser(char *format);
 
 #endif
