@@ -6,7 +6,7 @@
 /*   By: ksoulard <ksoulard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 14:57:16 by ksoulard          #+#    #+#             */
-/*   Updated: 2016/02/17 10:07:47 by klescaud         ###   ########.fr       */
+/*   Updated: 2016/02/17 10:52:05 by ksoulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int				check_charconv(char c, char *conv, unsigned int nbargs)
 **	check_nbconversion => get the numbers of conversion on the format string
 */
 
-void			check_nbconversion(char *format, t_pftinfo **info)
+int			check_nbconversion(char *format, t_ptfinfo **info)
 {
 	int			i;
 	int			booll;
@@ -73,7 +73,7 @@ void			check_nbconversion(char *format, t_pftinfo **info)
 				nbformat++;
 			i++;
 		}
-		if (booll = 1)
+		if (booll == 1)
 			nbformat++;
 		i++;
 	}
@@ -125,11 +125,12 @@ char			**check_format(char *format, int nbargs)
 // info->format_array = (char **)malloc(sizeof(char *) * nbformat + 1);
 // info->format_array[nbformat] = NULL;
 
-t_ptfinfo		str_parser(char *format)
+t_ptfinfo		*str_parser(char *format)
 {
 	t_ptfinfo	*info;
 	int			nbconv;
 
+	info = NULL;
 	if (format == NULL)
 		return (NULL);
 	if (ft_strcmp(format, "") == 0)
@@ -137,8 +138,9 @@ t_ptfinfo		str_parser(char *format)
 	if (init_info(info) == -1)
 		return (NULL);
 	nbconv = check_nbconversion(format, &info);
-	info->types = check_types(format, info->nbargs);
+	//info->types = check_types(format, info->nbargs);
 	info->format_array = check_format(format, nbconv);
-	if (info->types == NULL || info->format_array == NULL)
+	if (info->format_array == NULL)
 		return (NULL);
+	return (info);
 }
