@@ -6,7 +6,7 @@
 /*   By: klescaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 14:47:45 by klescaud          #+#    #+#             */
-/*   Updated: 2016/02/17 10:47:18 by klescaud         ###   ########.fr       */
+/*   Updated: 2016/02/17 10:55:16 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ft_printf(char *format)
 /*
 ** WIP
 */
-	t_ptfinfo	info;
+	t_ptfinfo	*info;
 	size_t		res;
 
 	res = 0;
