@@ -6,7 +6,7 @@
 /*   By: klescaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 14:47:45 by klescaud          #+#    #+#             */
-/*   Updated: 2016/02/17 10:08:39 by klescaud         ###   ########.fr       */
+/*   Updated: 2016/02/17 10:47:18 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int		main(void)
 {
 	int		ptfreturn;
 
-	ptfreturn = ft_printf("My name is %s.\n", "Slim Shady");
+	ptfreturn = ft_printf("My name is Slim Shady.\n");
 	ft_putstr("ft_printf return value = ");
 	ft_putnbr(ptfreturn);
 	ft_putendl("");
 	ft_putendl("-------------------------------------------------");
-	ptfreturn = printf("My name is %s.\n", "Slim Shady");
+	ptfreturn = printf("My name is Slim Shady.\n");
 	ft_putstr("printf return value = ");
 	ft_putnbr(ptfreturn);
 	ft_putendl("");
@@ -42,12 +42,12 @@ int		ft_printf(char *format)
 /*
 ** WIP
 */
-	t_ptfinfo	*info;
+	t_ptfinfo	info;
 	size_t		res;
 
 	res = 0;
-	*info = str_parser(format);
-	display_array(info->format_array);
-	res = array_size(ptfinfo->format_array);
+	info = str_parser(format);
+	display_array(info.format_array);
+	res = array_size(info.format_array);
 	return (res);
 }

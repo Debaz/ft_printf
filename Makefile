@@ -6,7 +6,7 @@
 #    By: ksoulard <ksoulard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/11 13:44:49 by ksoulard          #+#    #+#              #
-#    Updated: 2016/02/16 15:59:33 by klescaud         ###   ########.fr        #
+#    Updated: 2016/02/17 10:43:30 by klescaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ EXT =		.c
 
 FLAGS =		-Wall -Wextra -Werror
 
-FILE =		ptf_main ptf_parser ptf_display
+FILE =		ptf_main		ptf_parser		ptf_display		ptf_converter1	\
+			ft_strndup		ft_free_tab
 
 SOURCE = 	sources/
 
@@ -41,31 +42,23 @@ C_B=		\033[38;5;97m
 C_N=		\033[38;5;200m
 C_G=		\033[38;5;190m
 
-all: 	$(EXEC) $(NAME) #norme
-
-$(EXEC):
-		@make -C $(LIB_DIR)
-		@echo "$(C_Y)$(LIB_DIR) $(C_R)		is done !$(C_W)"
+all: 	 $(NAME) #norme
 
 $(NAME): $(OBJ)
-		@$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(EXEC)
+		@$(CC) $(FLAGS) -o $(NAME) $(OBJ) -L./sources/libft -lft
 		@echo "\n$(C_Y)$(NAME) $(C_R)		is done !$(C_W)"
 
 %.o:	%$(EXT) $(INCLUDE)
-		@$(CC) $(FLAGS) -c $< -o $@ -I libft
+		@$(CC) $(FLAGS) -c $< -o $@ -I./includes
 		@printf "\033[32m.$(C_W)"
 
 clean:
 		@rm -rf $(OBJ)
 		@echo "$(C_B)$(NAME)$(C_R)		All obj are cleaned$(C_W)"
-		@(cd $(LIB_DIR) && $(MAKE) $@)
-		@echo "$(C_B)$(LIB_DIR)$(C_R)		All obj are cleaned$(C_W)"
 
 fclean: clean
 		@rm -rf $(NAME)
 		@echo "\n$(C_G)$(NAME)$(C_R)		is clean$(C_W)"
-		@(cd $(LIB_DIR) && $(MAKE) $@)
-		@echo "$(C_G)$(EXEC)$(C_R)	is clean$(C_W)\n"
 
 norme:
 		@echo "\nSource:$(C_N)"
