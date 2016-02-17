@@ -6,7 +6,7 @@
 #    By: ksoulard <ksoulard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/11 13:44:49 by ksoulard          #+#    #+#              #
-#    Updated: 2016/02/17 10:43:30 by klescaud         ###   ########.fr        #
+#    Updated: 2016/02/17 10:55:02 by ksoulard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC =		gcc
 
 EXT =		.c
 
-FLAGS =		-Wall -Wextra -Werror
+FLAGS =		-Wall -Wextra -Werror -g
 
 FILE =		ptf_main		ptf_parser		ptf_display		ptf_converter1	\
 			ft_strndup		ft_free_tab

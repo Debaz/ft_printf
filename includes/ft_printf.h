@@ -6,7 +6,7 @@
 /*   By: ksoulard <ksoulard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 14:48:16 by klescaud          #+#    #+#             */
-/*   Updated: 2016/02/17 10:51:20 by ksoulard         ###   ########.fr       */
+/*   Updated: 2016/02/17 11:22:33 by ksoulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ char		*ft_strndup(char const *s, int n);
 ** ptf_display.c
 */
 
-int			init_info(t_ptfinfo *info);
+int			init_info(t_ptfinfo **info);
 int			check_charconv(char c, char *conv, unsigned int nbargs);
 int			check_nbconversion(char *format, t_ptfinfo **info);
 char		**check_format(char *format, int nbargs);

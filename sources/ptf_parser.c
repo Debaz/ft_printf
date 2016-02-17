@@ -6,7 +6,7 @@
 /*   By: ksoulard <ksoulard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 14:57:16 by ksoulard          #+#    #+#             */
-/*   Updated: 2016/02/17 10:52:05 by ksoulard         ###   ########.fr       */
+/*   Updated: 2016/02/17 11:27:10 by ksoulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 **	init_info => initialize t_ptfinfo structure
 */
 
-int				init_info(t_ptfinfo *info)
+int				init_info(t_ptfinfo **info)
 {
-	info = (t_ptfinfo *)malloc(sizeof(t_ptfinfo));
-	if (info == NULL)
+	*info = (t_ptfinfo *)malloc(sizeof(t_ptfinfo));
+	if (*info == NULL)
 		return (-1);
-	info->format_array = NULL;
-	info->nbargs = 0;
-	info->types = NULL;
+	(*info)->format_array = NULL;
+	(*info)->nbargs = 0;
+	(*info)->types = NULL;
 	return (0);
 }
 
@@ -96,6 +96,8 @@ char			**check_format(char *format, int nbargs)
 	char		*s;
 
 	i = 0;
+	(void)format;
+
 	if ((types = (char **)malloc(sizeof(char *) * nbargs + 1)) == NULL)
 		return (NULL);
 	types[nbargs] = NULL;
@@ -106,14 +108,14 @@ char			**check_format(char *format, int nbargs)
 			if ((types[i] = ft_strndup(format, s - format)) == NULL)
 				return (ft_free_tab((void **)types));
 			format = s;
-			i++;
 		}
 		else
 		{
 			if ((types[i] = ft_strdup(format)) == NULL)
-				return (ft_free_tab((void **)types));
+				return (NULL);
 			break ;
 		}
+		i++;
 	}
 	return (types);
 }
@@ -135,10 +137,9 @@ t_ptfinfo		*str_parser(char *format)
 		return (NULL);
 	if (ft_strcmp(format, "") == 0)
 		return (NULL);
-	if (init_info(info) == -1)
+	if (init_info(&info) == -1)
 		return (NULL);
 	nbconv = check_nbconversion(format, &info);
-	//info->types = check_types(format, info->nbargs);
 	info->format_array = check_format(format, nbconv);
 	if (info->format_array == NULL)
 		return (NULL);
