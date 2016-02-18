@@ -18,8 +18,8 @@ EXT =		.c
 
 FLAGS =		-Wall -Wextra -Werror -g
 
-FILE =		ptf_main		ptf_parser		ptf_display		ptf_converter1	\
-			ft_strndup		ft_free_tab
+FILE =		ptf_main	ptf_parser	ptf_display	ptf_converter1\
+		ft_strndup	ft_free_tab
 
 SOURCE = 	sources/
 
