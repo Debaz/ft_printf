@@ -6,7 +6,7 @@
 #    By: ksoulard <ksoulard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/11 13:44:49 by ksoulard          #+#    #+#              #
-#    Updated: 2016/08/04 19:45:46 by klescaud         ###   ########.fr        #
+#    Updated: 2016/08/17 16:18:11 by klescaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ EXT =		.c
 
 FLAGS =		-Wall -Wextra -Werror -g
 
-FILE =		maintest ft_printf_main
+FILE =		maintest ft_printf_main conv_1 tools_1
 
 SOURCE = 	sources/
 
