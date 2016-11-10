@@ -6,7 +6,7 @@
 #    By: ksoulard <ksoulard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/11 13:44:49 by ksoulard          #+#    #+#              #
-#    Updated: 2016/08/17 16:18:11 by klescaud         ###   ########.fr        #
+#    Updated: 2016/11/10 09:58:30 by Debaz            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ C_B=		\033[38;5;97m
 C_N=		\033[38;5;200m
 C_G=		\033[38;5;190m
 
-all: 	 $(NAME) #norme
+all: 	 $(NAME) #normee
 
 $(NAME): $(OBJ)
 		@$(CC) $(FLAGS) -o $(NAME) $(OBJ) -L./sources/libft -lft
